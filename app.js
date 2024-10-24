@@ -15,54 +15,55 @@ Buttons.forEach((button) => {
     const pushedButton = event.target.innerText;
     console.log(pushedButton);
 
-
-if (event.target.classList.contains("number")) {
-  if (operator === "") {
-    leftHalf = leftHalf + pushedButton;
-  } else rightHalf = rightHalf + pushedButton;
-  display.innerText = pushedButton;
-}
-if (pushedButton === "*") {
-  operator = "*";
-}
-if (pushedButton === "-") {
-  operator = "-";
-}
-if (pushedButton === "/") {
-  operator = "/";
-}
-if (pushedButton === "+") {
-  operator = "+";
-}
-if (pushedButton === "C") {
-  leftHalf = "";
-  rightHalf = "";
-  operator = "";
-  result = 0;
-  display.innerText = "";
-}
-if (pushedButton === "=") {
-  if (operator === "+") {
-    result = parseInt(leftHalf) + parseInt(rightHalf);
-    console.log(result);
-    display.innerText = result
-  }
-  if (operator === "-") {
-    result = parseInt(leftHalf) - parseInt(rightHalf);
-    console.log(result);
-    display.innerText = result
-
-  }
-  if (operator === "*") {
-    result = parseInt(leftHalf) * parseInt(rightHalf);
-    console.log(result);
-    display.innerText = result
-  }
-  if (operator === "/") {
-    result = parseInt(leftHalf) / parseInt(rightHalf);
-    console.log(result);
-    display.innerText = result
-  }
-}
+    if (event.target.classList.contains("number")) {
+      if (operator === "") {
+        leftHalf = leftHalf + pushedButton;
+        display.innerText = leftHalf;
+    } else {rightHalf = rightHalf + pushedButton;
+            display.innerText = rightHalf;;}
+    }
+    if (pushedButton === "*") {
+      operator = "*";
+    }
+    if (pushedButton === "-") {
+      operator = "-";
+    }
+    if (pushedButton === "/") {
+      operator = "/";
+    }
+    if (pushedButton === "+") {
+      operator = "+";
+    }
+    if (pushedButton === "C") {
+      leftHalf = "";
+      rightHalf = "";
+      operator = "";
+      result = 0;
+      display.innerText = "";
+    }
+    if (pushedButton === "=") {
+      if (operator === "+") {
+        result = parseInt(leftHalf) + parseInt(rightHalf);
+        console.log(result);
+        display.innerText = result;
+      }
+      if (operator === "-") {
+        result = parseInt(leftHalf) - parseInt(rightHalf);
+        console.log(result);
+        display.innerText = result;
+      }
+      if (operator === "*") {
+        result = parseInt(leftHalf) * parseInt(rightHalf);
+        console.log(result);
+        display.innerText = result;
+      }
+      if (operator === "/") {
+        result = parseInt(leftHalf) / parseInt(rightHalf);
+        console.log(result);
+        display.innerText = result;
+      }
+    }
+  });
 });
-});
+
+// Credit to chat gpt for showing me initial operator from which I derived how to code all other buttons and for teaching me parseInt()
